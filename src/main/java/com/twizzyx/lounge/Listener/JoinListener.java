@@ -1,5 +1,6 @@
 package com.twizzyx.lounge.Listener;
 
+import com.twizzyx.lounge.utils.TablistManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -26,7 +27,7 @@ public class JoinListener implements Listener {
         player.setExp(0f);
 
         // Téléportation au spawn
-        Location spawn = new Location(Bukkit.getWorld("world"), 0.5, 64, 0.5);
+        Location spawn = new Location(Bukkit.getWorld("world"), 31, 177, 56);
         player.teleport(spawn);
 
         // Message de bienvenue en title
@@ -37,5 +38,7 @@ public class JoinListener implements Listener {
         meta.setDisplayName("§eLounge");
         item.setItemMeta(meta);
         player.getInventory().setItem(8, item);
+
+        TablistManager.updateTab(player);
     }
 }

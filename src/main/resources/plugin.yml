@@ -9,3 +9,7 @@ commands:
     description: Active ou désactive le bypass des protections.
     usage: /bypassbuild
     permission: op
+
+  lobby:
+    description: Téléporte au lobby principal
+    usage: /lobby

@@ -28,14 +28,21 @@ public class JoinListener implements Listener {
         player.setExp(0f);
         ScoreboardManagerLounge.setScoreboard(player);
         // Téléportation au spawn
-        Location spawn = new Location(Bukkit.getWorld("world"), 31, 177, 56);
+        Location spawn = new Location(Bukkit.getWorld("world"), 31.5, 177, 56.5, 180f, 0f);
         player.teleport(spawn);
 
         // Message de bienvenue en title
         player.sendTitle("Bienvenue sur", "§5LE LOUNGE", 10, 60, 10);
 
+        // Boussole Mini-jeu
+        ItemStack compass = new ItemStack(Material.COMPASS);
+        ItemMeta meta = compass.getItemMeta();
+        meta.setDisplayName("§dMini-jeu");
+        compass.setItemMeta(meta);
+        player.getInventory().setItem(0, compass); // Slot 0 pour accès facile
+
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
-        ItemMeta meta = item.getItemMeta();
+        meta = item.getItemMeta();
         meta.setDisplayName("§eLounge");
         item.setItemMeta(meta);
         player.getInventory().setItem(8, item);

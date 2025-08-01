@@ -1,5 +1,6 @@
 package com.twizzyx.lounge.Listener;
 
+import com.twizzyx.lounge.utils.ScoreboardManagerLounge;
 import com.twizzyx.lounge.utils.TablistManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -25,7 +26,7 @@ public class JoinListener implements Listener {
         player.setSaturation(20);
         player.setLevel(0);
         player.setExp(0f);
-
+        ScoreboardManagerLounge.setScoreboard(player);
         // Téléportation au spawn
         Location spawn = new Location(Bukkit.getWorld("world"), 31, 177, 56);
         player.teleport(spawn);

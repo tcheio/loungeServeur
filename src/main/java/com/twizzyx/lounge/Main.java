@@ -2,10 +2,7 @@ package com.twizzyx.lounge;
 
 import com.twizzyx.lounge.Commands.BypassBuildCommand;
 import com.twizzyx.lounge.Commands.LobbyCommand;
-import com.twizzyx.lounge.Listener.BuildProtectionListener;
-import com.twizzyx.lounge.Listener.InteractListener;
-import com.twizzyx.lounge.Listener.JoinListener;
-import com.twizzyx.lounge.Listener.MiniJeuItemListener;
+import com.twizzyx.lounge.Listener.*;
 import com.twizzyx.lounge.utils.TablistManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +17,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InteractListener(), this);
         getServer().getPluginManager().registerEvents(buildProtection, this);
         getServer().getPluginManager().registerEvents(new MiniJeuItemListener(), this);
+        getServer().getPluginManager().registerEvents(new AntiFallListener(), this);
         Bukkit.getScheduler().runTaskTimer(this, TablistManager::updateTabForAll, 0L, 100L); // toutes les 5s
 
         //Commands serveur

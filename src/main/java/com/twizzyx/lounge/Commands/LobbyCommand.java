@@ -12,21 +12,21 @@ public class LobbyCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Location spawnCoord = new Location(Bukkit.getWorld("world"), 31.5, 177, 56.5, 180f, 0f);
         if (!(sender instanceof Player)) {
             sender.sendMessage("Cette commande est réservée aux joueurs !");
             return true;
         }
 
         Player player = (Player) sender;
-        World lobbyWorld = Bukkit.getWorld("world");
+        World lobbyWorld = (Bukkit.getWorld("world"));
 
         if (lobbyWorld == null) {
             player.sendMessage("§cLe monde principal n'est pas disponible.");
             return true;
         }
 
-        Location spawn = lobbyWorld.getSpawnLocation();
-        player.teleport(spawn);
+        player.teleport(spawnCoord);
         player.sendMessage("§aTéléportation vers le lobby !");
         return true;
     }

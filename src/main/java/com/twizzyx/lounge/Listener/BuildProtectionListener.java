@@ -2,6 +2,7 @@ package com.twizzyx.lounge.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,7 +29,12 @@ public class BuildProtectionListener implements Listener {
     }
 
     private boolean isInSpawnZone(Player player) {
-        return player.getLocation().distance(Bukkit.getWorld("world").getSpawnLocation()) <= SPAWN_PROTECTION_RADIUS;
+        World spawnWorld = Bukkit.getWorld("world");
+        if (spawnWorld == null || !player.getWorld().equals(spawnWorld)) {
+            return false; // Le joueur n'est pas dans le monde du spawn
+        }
+
+        return player.getLocation().distance(spawnWorld.getSpawnLocation()) <= SPAWN_PROTECTION_RADIUS;
     }
 
     @EventHandler

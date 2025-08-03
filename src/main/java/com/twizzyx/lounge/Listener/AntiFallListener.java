@@ -24,6 +24,10 @@ public class AntiFallListener implements Listener {
 
             Location spawn = new Location(world, 31.5, 177, 56.5, 180f, 0f);
             player.teleport(spawn);
+
+            // ✅ Annule les dégâts de chute
+            player.setFallDistance(0f);
+
             player.sendMessage("§eTu as été ramené au spawn !");
         }
     }

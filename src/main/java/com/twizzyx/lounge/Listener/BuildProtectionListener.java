@@ -1,6 +1,7 @@
 package com.twizzyx.lounge.Listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -21,9 +22,11 @@ public class BuildProtectionListener implements Listener {
     public void toggleBypass(Player player) {
         if (bypassPlayers.contains(player)) {
             bypassPlayers.remove(player);
+            player.setGameMode(GameMode.ADVENTURE); // Désactivation → aventure
             player.sendMessage("§cMode build désactivé !");
         } else {
             bypassPlayers.add(player);
+            player.setGameMode(GameMode.CREATIVE); // Activation → créatif
             player.sendMessage("§aMode build activé !");
         }
     }

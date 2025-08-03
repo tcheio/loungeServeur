@@ -1,6 +1,7 @@
 package com.twizzyx.lounge.Commands;
 
 import com.twizzyx.lounge.Listener.BuildProtectionListener;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

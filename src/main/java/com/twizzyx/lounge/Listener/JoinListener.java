@@ -24,6 +24,7 @@ public class JoinListener implements Listener {
         player.setHealth(player.getMaxHealth());
         player.setFoodLevel(20);
         player.setSaturation(20);
+        player.setMaxHealth(20.0);
         player.setLevel(0);
         player.setExp(0f);
         ScoreboardManagerLounge.setScoreboard(player);
@@ -49,4 +50,12 @@ public class JoinListener implements Listener {
 
         TablistManager.updateTab(player);
     }
+
+    public static void simulateJoin(Player player) {
+        // ✅ Réutilise toute la logique déjà en place
+        PlayerJoinEvent fakeEvent = new PlayerJoinEvent(player, "re");
+        new JoinListener().onJoin(fakeEvent);
+        Bukkit.getLogger().info("[Lounge] Simulated join for " + player.getName());
+    }
+
 }

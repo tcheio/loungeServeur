@@ -16,13 +16,13 @@ public class ScoreboardManagerLounge {
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         // Scoreboard stylé
-        objective.getScore("§8----------------").setScore(6);
+        objective.getScore("§7§m§m                          ").setScore(6);
         objective.getScore("§7Pseudo:").setScore(5);
         objective.getScore("§f" + player.getName()).setScore(4);
         objective.getScore("§r ").setScore(3); // ligne vide
         objective.getScore("§dProchaine soirée:").setScore(2);
         objective.getScore("§f01/01/2025").setScore(1);
-        objective.getScore("§8----------------§r").setScore(0); // ligne vide
+        objective.getScore("§7§m§m                          §r").setScore(0);
         player.setScoreboard(board);
     }
 }

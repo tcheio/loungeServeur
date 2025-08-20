@@ -15,11 +15,11 @@ public class AntiFallListener implements Listener {
         Player player = event.getPlayer();
 
         // Vérifie le monde concerné uniquement
-        if (!player.getWorld().getName().equalsIgnoreCase("world")) return;
+        if (!player.getWorld().getName().equalsIgnoreCase("Lobby")) return;
 
         // Vérifie si le joueur descend sous Y = 140
         if (player.getLocation().getY() < 140) {
-            World world = Bukkit.getWorld("world");
+            World world = Bukkit.getWorld("Lobby");
             if (world == null) return;
 
             Location spawn = new Location(world, 31.5, 177, 56.5, 180f, 0f);

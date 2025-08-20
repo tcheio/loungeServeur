@@ -29,7 +29,7 @@ public class JoinListener implements Listener {
         player.setExp(0f);
         ScoreboardManagerLounge.setScoreboard(player);
         // Téléportation au spawn
-        Location spawn = new Location(Bukkit.getWorld("world"), 31.5, 177, 56.5, 180f, 0f);
+        Location spawn = new Location(Bukkit.getWorld("Lobby"), 31.5, 177, 56.5, 180f, 0f);
         player.teleport(spawn);
 
         // Message de bienvenue en title

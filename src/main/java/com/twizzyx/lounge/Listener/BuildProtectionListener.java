@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,7 +33,7 @@ public class BuildProtectionListener implements Listener {
     }
 
     private boolean isInSpawnZone(Player player) {
-        World spawnWorld = Bukkit.getWorld("world");
+        World spawnWorld = Bukkit.getWorld("Lobby");
         if (spawnWorld == null || !player.getWorld().equals(spawnWorld)) {
             return false; // Le joueur n'est pas dans le monde du spawn
         }

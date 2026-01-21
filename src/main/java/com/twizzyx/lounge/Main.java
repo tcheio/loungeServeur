@@ -18,7 +18,9 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(buildProtection, this);
         getServer().getPluginManager().registerEvents(new MiniJeuItemListener(), this);
         getServer().getPluginManager().registerEvents(new AntiFallListener(), this);
-        Bukkit.getScheduler().runTaskTimer(this, TablistManager::updateTabForAll, 0L, 100L); // toutes les 5s
+        getServer().getPluginManager().registerEvents(new LobbyNoDamageListener("lobbyGeneral"), this);
+        Bukkit.getScheduler().runTaskTimer(this, TablistManager::updateTabForAll, 0L, 100L);
+
 
         //Commands serveur
         getCommand("bypassbuild").setExecutor(new BypassBuildCommand(buildProtection));

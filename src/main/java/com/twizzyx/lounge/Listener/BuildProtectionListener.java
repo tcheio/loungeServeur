@@ -32,7 +32,7 @@ public class BuildProtectionListener implements Listener {
     }
 
     private boolean isInSpawnZone(Player player) {
-        World spawnWorld = Bukkit.getWorld("world");
+        World spawnWorld = Bukkit.getWorld("lobbyGeneral");
         if (spawnWorld == null || !player.getWorld().equals(spawnWorld)) {
             return false; // Le joueur n'est pas dans le monde du spawn
         }
